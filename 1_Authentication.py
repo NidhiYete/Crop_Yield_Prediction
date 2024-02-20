@@ -23,8 +23,8 @@ def main():
 
     # Load Supabase credentials from environment variables
     load_dotenv()
-    supabase_url = os.environ["SUPABASE_URL"]
-    supabase_api_key = os.environ["SUPABASE_KEY"]
+    supabase_url = os.environ.get("SUPABASE_URL")
+    supabase_api_key = os.environ.get("SUPABASE_KEY")
 
     # Get user session information using Supabase login form
     session = login_form(
