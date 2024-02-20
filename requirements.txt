@@ -11,6 +11,6 @@ seaborn==0.13.2
 st_pages==0.4.5
 streamlit==1.31.1
 tensorflow==2.15.0
-tensorflow_intel==2.15.0
+tensorflow_intel==0.0.1
 
 python-dotenv==1.0.1
