@@ -3,6 +3,8 @@ import streamlit as st
 import os
 from dotenv import load_dotenv
 from streamlit_supabase_auth import login_form, logout_button
+from supabase import create_client, Client
+from st_supabase_connection import SupabaseConnection
 
 # CSS to hide the sidebar when the user is not in session
 hide_sidebar = """
@@ -21,10 +23,28 @@ def main():
     st.title("Login")
     st.header("Auth using Supabase")
 
+
+
     # Load Supabase credentials from environment variables
     load_dotenv()
     supabase_url = os.environ.get("SUPABASE_URL")
     supabase_api_key = os.environ.get("SUPABASE_KEY")
+
+    # Check if Supabase credentials are available
+    if not (supabase_url and supabase_api_key):
+        st.error("Supabase credentials are missing. Please check your environment.")
+    else:
+        # Create Supabase client
+        supabase = create_client(supabase_url, supabase_api_key)
+
+        # Access the session state
+        session_state = st.session_state
+
+
+
+        @st.cache
+        def init_connection():
+            return supabase
 
     # Get user session information using Supabase login form
     session = login_form(
