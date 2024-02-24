@@ -7,8 +7,7 @@ import matplotlib.pyplot as plt
 from streamlit_supabase_auth import logout_button
 import pygwalker as pyg
 import streamlit.components.v1 as components
-from ydata_profiling import ProfileReport
-#from streamlit_pandas_profiling import st_profile_report
+
 
 # Set the title for the report
 st.title("Crop Yield Report")
