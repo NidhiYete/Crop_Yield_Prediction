@@ -16,6 +16,7 @@ from sklearn.preprocessing import PowerTransformer, OneHotEncoder, MinMaxScaler
 from scipy.stats.mstats import winsorize
 from streamlit_supabase_auth import logout_button
 
+
 # Access the session state
 session_state = st.session_state
 
@@ -130,6 +131,7 @@ if st.button("Train and Evaluate Model"):
     st.write(rf_predictions_df)
     st.write("Crop Yield predicted is ", rf_predictions_df, "production per unit area")
     st.balloons()
+
 
 # Define columns
 col1, col2, col3, col4, col5 = st.columns(5)

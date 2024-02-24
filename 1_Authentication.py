@@ -74,6 +74,8 @@ def main():
             # Add a logout button to the sidebar
             logout_button()
 
+
+
 def clearSessionState():
     # Clear the previous session state if it exists
     prev_session_state = st.session_state
@@ -82,6 +84,7 @@ def clearSessionState():
         prev_session_state.id = None
         prev_session_state.email = None
         print('Old Session state Cleared.')
+
 
 if __name__ == "__main__":
     # Clear the session state at the beginning

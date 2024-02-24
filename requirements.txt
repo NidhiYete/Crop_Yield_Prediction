@@ -16,5 +16,6 @@ st_pages==0.4.5
 pip==24.0
 st-supabase-connection==1.2.2
 supabase==2.3.5
+pygwalker==0.4.6
 
 

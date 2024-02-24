@@ -5,6 +5,7 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 from streamlit_supabase_auth import logout_button
 
+
 # Access the session state
 session_state = st.session_state
 
@@ -91,6 +92,8 @@ elif category == 'Heatmaps':
 with st.sidebar:
     st.write(f"Welcome  - {session_state.email}")
     logout_button()
+
+
 
 # Define columns
 col1, col2, col3, col4, col5 = st.columns(5)
