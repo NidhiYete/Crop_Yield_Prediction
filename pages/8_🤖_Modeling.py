@@ -131,7 +131,21 @@ if st.button("Train and Evaluate Model"):
     st.write(rf_predictions_df)
     st.write("Crop Yield predicted is ", rf_predictions_df, "production per unit area")
     st.balloons()
+    
+# generate text report
+text3 = '''In the crop yield prediction analysis, three different regression models were employed: Linear Regression, 
+            Random Forest, and LSTM (Long Short-Term Memory). The performance metrics for each model were assessed to 
+            evaluate their predictive accuracy. The Linear Regression model yielded a Root Mean Squared Error (RMSE) of 
+            359.80 and an R² (coefficient of determination) of 0.85. The Random Forest model outperformed it with an 
+            RMSE of 277.93 and an R² of 0.91. The LSTM model, designed for sequential data, achieved the lowest RMSE of 
+            0.24 and the highest R² of 0.94, indicating superior predictive capabilities. These results suggest that the
+             Random Forest and LSTM models are well-suited for crop yield prediction, with the LSTM model demonstrating 
+             exceptional accuracy. The cross-validation scores for the models further support their robustness, with 
+             Random Forest exhibiting consistently high scores across different folds. The choice of these analytics 
+             methods was driven by their ability to handle diverse data patterns and sequences, ensuring a comprehensive
+              and accurate analysis of crop yield prediction.'''
 
+st.download_button('Download Report', text3)
 
 # Define columns
 col1, col2, col3, col4, col5 = st.columns(5)
