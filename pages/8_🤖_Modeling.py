@@ -118,7 +118,7 @@ st.sidebar.header("Choose Hyperparameters of the Models")
 
 # Train and evaluate the model button
 if st.button("Train and Evaluate Model"):
-    st.write("Training and evaluating the selected model...")
+    
     scaled_df = scaler.fit_transform(df)
 
     # Convert the scaled arrays back to DataFrames and assign column names
@@ -128,12 +128,10 @@ if st.button("Train and Evaluate Model"):
     rf_predictions_df = rf_model.predict(df_pd)
 
     st.subheader("Prediction of Crop Yield")
-    st.write(rf_predictions_df)
-    st.write("Crop Yield predicted is ", rf_predictions_df, "production per unit area")
+    st.write("Crop Yield predicted based on the above hyperparameters is ", rf_predictions_df, "production per unit area")
     st.balloons()
-    
-# generate text report
-text3 = '''In the crop yield prediction analysis, three different regression models were employed: Linear Regression, 
+    # generate text report
+    text3 = '''In the crop yield prediction analysis, three different regression models were employed: Linear Regression, 
             Random Forest, and LSTM (Long Short-Term Memory). The performance metrics for each model were assessed to 
             evaluate their predictive accuracy. The Linear Regression model yielded a Root Mean Squared Error (RMSE) of 
             359.80 and an R² (coefficient of determination) of 0.85. The Random Forest model outperformed it with an 
@@ -145,7 +143,7 @@ text3 = '''In the crop yield prediction analysis, three different regression mod
              methods was driven by their ability to handle diverse data patterns and sequences, ensuring a comprehensive
               and accurate analysis of crop yield prediction.'''
 
-st.download_button('Download Report', text3)
+     st.download_button('Download Report', text3)
 
 # Define columns
 col1, col2, col3, col4, col5 = st.columns(5)
